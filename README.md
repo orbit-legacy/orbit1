@@ -1,20 +1,18 @@
 <img src="https://www.orbit.cloud/img/orbit-logo-black.png" alt="Orbit Logo" width="200px"/>
 
-[![Release](https://img.shields.io/github/release/orbit/orbit.svg)](https://github.com/orbit/orbit/releases)
-[![Maven Central](https://img.shields.io/maven-central/v/cloud.orbit/orbit-runtime.svg)](https://repo1.maven.org/maven2/cloud/orbit/)
-[![Javadocs](http://www.javadoc.io/badge/cloud.orbit/orbit-runtime.svg)](https://github.com/orbit/orbit/wiki/Javadocs)
-[![Build Status](https://img.shields.io/travis/orbit/orbit.svg)](https://travis-ci.org/orbit/orbit)
+[![Release](https://img.shields.io/github/release/orbit/orbit-legacy.svg)](https://github.com/orbit/orbit-legacy/releases)
+[![Build Status](https://img.shields.io/travis/com/orbit/orbit-legacy)](https://travis-ci.com/orbit/orbit-legacy)
 [![Gitter](https://img.shields.io/badge/style-Join_Chat-ff69b4.svg?style=flat&label=gitter)](https://gitter.im/orbit/orbit)
 [![Twitter Follow](https://img.shields.io/twitter/follow/OrbitFramework.svg?style=flat&maxAge=86400)](https://twitter.com/orbitframework)
 
 Orbit is a framework to write distributed systems using virtual actors on the JVM. It allows developers to write highly distributed and scalable applications while greatly simplifying clustering, discovery, networking, state management, actor lifetime and more.
 
 <a href="https://github.com/orbit/orbit/wiki/Duke's-Choice-Award-2016"><img src="https://www.orbit.cloud/img/dca/dca_logo.png" alt="Duke's Choice Award Logo" width="200px" /></a><br />
-Orbit received the 2016 Duke's Choice Award for Open Source, read [here](https://github.com/orbit/orbit/wiki/Duke's-Choice-Award-2016) for more information. 
+Orbit received the 2016 Duke's Choice Award for Open Source, read [here](https://github.com/orbit/orbit-legacy/wiki/Duke's-Choice-Award-2016) for more information. 
 
 Full Documentation
 =======
-See the [Wiki](https://github.com/orbit/orbit/wiki) for full documentation, examples and other information.
+See the [Wiki](https://github.com/orbit/orbit-legacy/wiki) for full documentation, examples and other information.
 
 Developer & License
 ======
