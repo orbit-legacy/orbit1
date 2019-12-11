@@ -64,6 +64,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.ea.async.Async.await;
@@ -395,10 +396,8 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
             {
                 // Cache locally
                 localAddressCache.put(actorReference, nodeAddress);
-                return Task.fromValue(nodeAddress).whenCompleteAsync((r, e) ->
-                {
-                    // place holder, just to ensure the completion happens in another thread
-                }, stage.getExecutionPool());
+                // Ensure completion happens on the correct thread
+                return Task.fromValue(nodeAddress).thenApplyAsync(r -> r, stage.getExecutionPool());
             }
             else
             {
