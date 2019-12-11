@@ -387,8 +387,6 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
 
         // Get the existing activation from the distributed cache (if any)
         NodeAddress nodeAddress = distributedDirectory.get(remoteKey);
-        // Ensure we're running on the correct thread
-        await(Task.runAsync(() -> {}, stage.getExecutionPool()));
 
         if (nodeAddress != null)
         {
@@ -403,8 +401,6 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
             {
                 // Target node is now dead, remove this activation from distributed cache
                 distributedDirectory.remove(remoteKey, nodeAddress);
-                // Ensure we're running on the correct thread
-                await(Task.runAsync(() -> {}, stage.getExecutionPool()));
             }
         }
         nodeAddress = null;
