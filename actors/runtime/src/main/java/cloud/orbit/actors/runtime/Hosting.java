@@ -418,7 +418,7 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
         // Do we have a target node yet? If not, select randomly
         Task<NodeAddress> nodeAddressTask = nodeAddress != null ? Task.fromValue(nodeAddress) : selectNode(interfaceClass.getName());
 
-        return nodeAddressTask.thenApply((selectedNodeAddress) -> {
+        return nodeAddressTask.thenCompose((selectedNodeAddress) -> {
             // Push our selection to the distributed cache (if possible)
             NodeAddress otherNodeAddress = distributedDirectory.putIfAbsent(remoteKey, selectedNodeAddress);
 
@@ -430,7 +430,10 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
 
             localAddressCache.put(actorReference, selectedNodeAddress);
 
-            return selectedNodeAddress;
+            return Task.fromValue(selectedNodeAddress).whenCompleteAsync((r, e) ->
+            {
+                // place holder, just to ensure the completion happens in another thread
+            }, stage.getExecutionPool());
         });
     }
 
