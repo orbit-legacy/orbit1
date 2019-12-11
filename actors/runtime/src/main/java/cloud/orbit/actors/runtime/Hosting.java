@@ -395,7 +395,10 @@ public class Hosting implements NodeCapabilities, Startable, PipelineExtension
             {
                 // Cache locally
                 localAddressCache.put(actorReference, nodeAddress);
-                return Task.fromValue(nodeAddress);
+                return Task.fromValue(nodeAddress).whenCompleteAsync((r, e) ->
+                {
+                    // place holder, just to ensure the completion happens in another thread
+                }, stage.getExecutionPool());
             }
             else
             {
