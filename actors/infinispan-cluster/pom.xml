@@ -51,7 +51,7 @@
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>
-            <version>9.3.0.Final</version>
+            <version>11.0.6.Final</version>
         </dependency>
     </dependencies>
 </project>
